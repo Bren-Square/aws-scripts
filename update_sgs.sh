@@ -1,5 +1,6 @@
 #!/bin/bash
 # Automated Security Group Update Script
+# Brendan Swigart - 05/02/2018
 
 function update_sgs {
         
@@ -48,10 +49,10 @@ function update_sgs {
 
 function show-usage {
     echo "Usage:"
-    echo "  sg_update.sh [ -u ]"
+    echo "  update_sgs.sh [ -u ]"
     echo "  -u [old ip] [new ip]"
     echo "    This option is for updating existing SGs with new IP information"
-    echo "    EX: ./sg_update.sh -u 192.168.1.1 192.168.1.2"
+    echo "    EX: ./update_sgs.sh -u 192.168.1.1 192.168.1.2"
 }
 
 
@@ -62,7 +63,7 @@ function show-usage {
 while getopts ":u:" opt; do
     case $opt in
         u)
-            update-sgs "$2" "$3"
+            update_sgs "$2" "$3"
             exit 0
             ;;
         \?)
